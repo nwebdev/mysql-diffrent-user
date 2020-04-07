@@ -33,3 +33,15 @@ syntax
 # Remove an Existing MySQL User Account
 
     DROP USER 'user'@'localhost'
+    
+# ShortCut
+
+     create database testDB;
+
+     CREATE USER 'test2user'@'%' IDENTIFIED BY 'test2pass';
+
+     GRANT CREATE, DELETE, INSERT, SELECT, UPDATE  ON testDB.* TO 'test2user'@'%';
+
+     SHOW GRANTS FOR 'test2user'@'%';
+
+     exit;
