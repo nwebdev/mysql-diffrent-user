@@ -45,3 +45,26 @@ syntax
      SHOW GRANTS FOR 'test2user'@'%';
 
      exit;
+
+# MySQL 8 Confirm MySQL version
+     mysql -V
+     sudo mysql --user=root mysql
+     UPDATE mysql.user SET authentication_string=null WHERE User='root';
+     flush privileges;
+     ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'your_password_here';
+     flush privileges;
+     exit
+ # MySQL 5.7 
+     
+     update user set authentication_string=PASSWORD('your_password_here') where user='root';
+     update user set plugin="mysql_native_password" where User='root';
+     flush privileges;
+     exit
+     
+    
+ # MySQL 5.6 
+ 
+     update user set Password=PASSWORD('your_password_here') where user='root';
+     update user set plugin="mysql_native_password" where User='root';
+     flush privileges;
+     exit
